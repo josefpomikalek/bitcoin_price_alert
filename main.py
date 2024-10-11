@@ -12,5 +12,5 @@ crypto_params = {
     "apikey": ALPHA_VANTAGE_API_KEY
 }
 response = requests.get(CRYPTO_ENDPOINT, params=crypto_params)
-data = response.json()
+data = response.json()["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
 print(data)
