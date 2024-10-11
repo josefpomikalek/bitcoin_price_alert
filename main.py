@@ -4,6 +4,7 @@ from creds import ALPHA_VANTAGE_API_KEY
 CRYPTO_ENDPOINT = "https://www.alphavantage.co/query"
 CRYPTO = "BTC"
 FIAT = "USD"
+ALERT_PRICE = 62000
 
 crypto_params = {
     "function": "CURRENCY_EXCHANGE_RATE",
@@ -17,3 +18,7 @@ print(data)
 
 price = round(float(data), 2)
 print(price)
+
+if price > ALERT_PRICE:
+    alert_text = f"The price of {CRYPTO} is now {price} {FIAT}! Check it in you app!"
+    print(alert_text)
