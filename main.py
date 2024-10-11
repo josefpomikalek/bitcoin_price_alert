@@ -14,3 +14,6 @@ crypto_params = {
 response = requests.get(CRYPTO_ENDPOINT, params=crypto_params)
 data = response.json()["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
 print(data)
+
+price = round(float(data), 2)
+print(price)
