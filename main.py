@@ -1,5 +1,6 @@
 import requests
-from creds import ALPHA_VANTAGE_API_KEY
+from creds import ALPHA_VANTAGE_API_KEY, TWILIO_SID, TWILIO_AUTH_TOKEN
+from twilio.rest import Client
 
 CRYPTO_ENDPOINT = "https://www.alphavantage.co/query"
 CRYPTO = "BTC"
@@ -22,3 +23,6 @@ print(price)
 if price > ALERT_PRICE:
     alert_text = f"The price of {CRYPTO} is now {price} {FIAT}! Check it in you app!"
     print(alert_text)
+
+    # Send alert to my phone number via Twilio
+    client = Client(TWILIO_SID, TWILIO_AUTH_TOKEN)
