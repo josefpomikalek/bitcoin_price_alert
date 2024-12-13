@@ -5,7 +5,7 @@ from twilio.rest import Client
 CRYPTO_ENDPOINT = "https://www.alphavantage.co/query"
 CRYPTO = "BTC"
 FIAT = "USD"
-ALERT_PRICE = 65000
+ALERT_PRICE = 110000
 
 crypto_params = {
     "function": "CURRENCY_EXCHANGE_RATE",
